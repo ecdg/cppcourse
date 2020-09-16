@@ -1,4 +1,4 @@
-// Activity 5: Using iomanip
+// Using iomanip
 // By Emily Dayanghirang
 
 #include <iostream>
