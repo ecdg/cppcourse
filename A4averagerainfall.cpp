@@ -1,4 +1,6 @@
-// Calculate average rainfall
+// Calculates average rainfall
+// By Emily Dayanghirang
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
