@@ -1,5 +1,5 @@
-// By Emily Dayanghirang
 // The program gets the monthly collection and prints out its details
+// By Emily Dayanghirang
 
 #include <iostream>
 #include <iomanip>
