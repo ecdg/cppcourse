@@ -1,4 +1,6 @@
 // Word game
+// By Emily Dayanghirang
+
 #include <iostream>
 using namespace std;
 
