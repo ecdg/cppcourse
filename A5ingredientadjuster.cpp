@@ -1,4 +1,4 @@
-// Activity 4: Ingredient Adjuster
+// Ingredient Adjuster
 // By Emily Dayanghirang
 
 #include <iostream>
