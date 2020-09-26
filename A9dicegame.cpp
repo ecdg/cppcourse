@@ -15,7 +15,8 @@ int main()
 
     int firstDiceValue, secondDiceValue,
         playerOnePoints=0, playerTwoPoints=0,
-        total;
+        total=0, playerOneRoundsOfGamesWon=0,
+        playerTwoRoundsOfGamesWon=0;
 
     string playAgain;
 
@@ -85,10 +86,12 @@ int main()
         if(playerOnePoints > playerTwoPoints)
         {
             cout << "Player one won." << endl;
+            playerOneRoundsOfGamesWon++;
         }
         else
         {
             cout << "Player two won." << endl;
+            playerTwoRoundsOfGamesWon++;
         }
 
         /* Get players' points back to 0
@@ -104,6 +107,10 @@ int main()
         cin >> playAgain;
 
     }while(playAgain == "Y" || playAgain == "y");
+
+    cout << "\nRounds of games won for each player:\n"
+         << "Player one: " << playerOneRoundsOfGamesWon << endl
+         << "Player two: " << playerTwoRoundsOfGamesWon << endl;
 
     return 0;
 }
