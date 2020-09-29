@@ -17,10 +17,10 @@ int main()
     int firstOperand, secondOperand,
         userAnswer, correctAnswer;
 
-    bool newQuestion;
-
     // Seed the random number generator
     srand(time(0));
+
+    cout << "\nEnter -1 to exit the program\n";
 
     do
     {
@@ -28,56 +28,51 @@ int main()
         firstOperand = rand() % RANGE + LOWER_LIMIT;
         secondOperand = rand() % RANGE + LOWER_LIMIT;
 
-        // Multiplication computation
-        correctAnswer = firstOperand * secondOperand;
-
         // Prompt user
         cout << "\nHow much is " << firstOperand
              << " times " << secondOperand << "? ";
 
         cin >> userAnswer;
 
-        cout << endl;
+        // Multiplication computation
+        correctAnswer = firstOperand * secondOperand;
 
-        do
+        // User enters the correct answer
+        if(userAnswer == correctAnswer)
+            cout << "\nVery good!\n";
+
+        while(userAnswer != correctAnswer && userAnswer != -1)
         {
-            // Test conditions
-            if(userAnswer == correctAnswer && userAnswer != -1)
+            // Input validation for int
+            if (cin.fail())
             {
-                cout << "Very good!\n";
+                cout << "\nERROR: Please input an integer.\n";
+                cin.clear();
+                cin.ignore(1000,'\n');
+                // Re-prompt
+                cout << "\nHow much is " << firstOperand
+                     << " times " << secondOperand << "? ";
 
+                cin >> userAnswer;
             }
-            else if(userAnswer != correctAnswer && userAnswer != -1)
+            else
             {
-                cout << "Incorrect Answer. Please try again.\n";
-                newQuestion = false;
-
+                cout << "\nIncorrect Answer. Please try again.\n";
                 // Re-prompt user for the same question
                 cout << "\nHow much is " << firstOperand
                      << " times " << secondOperand << "? ";
 
                 cin >> userAnswer;
-
-                cout << endl;
-            }
-            else
-            {
-                // If user enters -1, then the user is done
-                cout << "\nGoodbye!\n";
             }
 
-        // Loop back to re-prompt until correct answer is given
-        }while(userAnswer != correctAnswer && userAnswer != -1);
-
-        /* At this point, the user has given
-           a correct answer, therefore a new
-           question is asked
-        */
-
-        newQuestion = true;
+            if(userAnswer == correctAnswer)
+                cout << "\nVery good!\n";
+        }
 
     // Loop back to ask a new mathematical question
-    }while(newQuestion == true && userAnswer != -1);
+    }while( userAnswer == correctAnswer && userAnswer != -1);
+
+    cout << "\nGoodbye!\n";
 
     return 0;
 }
