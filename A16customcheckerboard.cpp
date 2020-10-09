@@ -60,5 +60,5 @@ void getWidth(int &width)
                  << "range of 1 to " << MAX_WIDTH << ".\n";
         }
 
-    }while(userInput < 1 || userInput > MAX_WIDTH);
+    }while(userInput < 1 || userInput > MAX_WIDTH || cin.fail());
 }
