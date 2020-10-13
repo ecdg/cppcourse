@@ -18,7 +18,7 @@ int main()
     const int RANGE = UPPER_LIMIT - LOWER_LIMIT + 1;
     int lottery[NUM_DIGITS];
     int user[NUM_DIGITS];
-    int lotteryNumber, matchingDigits;
+    int matchingDigits;
 
     srand(time(0));
 
@@ -26,6 +26,7 @@ int main()
     {
         lottery[i] = rand() % RANGE + LOWER_LIMIT;
     }
+
 
     cout << "This is the lottery game."
          << "\nEnter 5 digits (from 0 through 9)\n";
@@ -92,7 +93,7 @@ int countMatchingDigits(const int lottery[], const int user[], int size)
 
 void results(int count)
 {
-    if(count == 9)
+    if(count == 5)
         cout << "\n\nYou are the grand prize winner!\n";
     else
         cout << "\n\nYou are not the grand prize winner.\n";
