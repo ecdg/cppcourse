@@ -88,6 +88,8 @@ int countMatchingDigits(const int lottery[], const int user[], int size)
             count++;
     }
 
+    cout << "\n\nThere is/are " << count << " matching digit/s.";
+
     return count;
 }
 
