@@ -24,7 +24,7 @@ int main()
 
     // Display mode
     displayMode = mode(userInt,SIZE);
-    cout<<"The most recurring number is " << displayMode << "." << endl;
+    cout << "The most recurring number is " << displayMode << "." << endl;
 
     return 0;
 }
