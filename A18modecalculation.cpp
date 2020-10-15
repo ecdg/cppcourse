@@ -14,7 +14,7 @@ int main()
 {
     const int SIZE = 7;
     int userInt[SIZE],
-        displayMode;
+            displayMode;
 
     // Get integers from user
     getInput(userInt,SIZE);
@@ -35,7 +35,7 @@ void getInput(int userInt[], int size)
 
     for (int i = 0; i < size; i++)
     {
-        cout << "Enter the # for element "
+        cout << "Enter the # for entry "
              << i + 1 << ": ";
 
         cin >> userInt[i];
