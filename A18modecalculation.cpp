@@ -31,7 +31,7 @@ int main()
 
 void getInput(int userInt[], int size)
 {
-    cout << "Enter " << size << " integers \n";
+    cout << "\nEnter " << size << " integers \n";
 
     for (int i = 0; i < size; i++)
     {
@@ -39,6 +39,18 @@ void getInput(int userInt[], int size)
              << i + 1 << ": ";
 
         cin >> userInt[i];
+
+        while(cin.fail())
+        {
+            if(cin.fail())
+            {
+                cin.clear();
+                cin.ignore(10000, '\n');
+            }
+            cout << "Please enter a valid integer: ";
+            cin >> userInt[i];
+        }
+
     }
 }
 
