@@ -17,13 +17,13 @@ int main()
         displayMode;
 
     // Get integers from user
-    getInput(userInt,SIZE);
+    getInput(userInt, SIZE);
 
     // Display user’s integers
-    displayInput(userInt,SIZE);
+    displayInput(userInt, SIZE);
 
     // Display mode
-    displayMode = mode(userInt,SIZE);
+    displayMode = mode(userInt, SIZE);
     cout << "The most recurring number is " << displayMode << "." << endl;
 
     return 0;
@@ -31,7 +31,7 @@ int main()
 
 void getInput(int userInt[], int size)
 {
-    cout << "Enter 7 integers \n";
+    cout << "Enter " << size << " integers \n";
 
     for (int i = 0; i < size; i++)
     {
