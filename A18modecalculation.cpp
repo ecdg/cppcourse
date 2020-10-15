@@ -14,7 +14,7 @@ int main()
 {
     const int SIZE = 7;
     int userInt[SIZE],
-            displayMode;
+        displayMode;
 
     // Get integers from user
     getInput(userInt,SIZE);
