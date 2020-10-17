@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/emily/CLionProjects/CISP360/A11numfileprocessing/A11numfileprocessing.cpp
+iostream
+-
+fstream
+-
+iomanip
+-
+

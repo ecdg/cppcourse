@@ -1,0 +1,3 @@
+/Users/emily/CLionProjects/CISP360/A11numfileprocessing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/emily/CLionProjects/CISP360/A11numfileprocessing/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/emily/CLionProjects/CISP360/A11numfileprocessing/cmake-build-debug/CMakeFiles/A11numfileprocessingt.dir
