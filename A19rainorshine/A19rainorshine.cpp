@@ -41,13 +41,7 @@ int main()
 
     for(int month = 0; month < NUMBER_OF_MONTHS; month++)
     {
-        if(month == 0)
             rainyDaysAllMonths[month] = determineMonthlyWeather(weather, month);
-        else if(month == 1)
-            rainyDaysAllMonths[month] = determineMonthlyWeather(weather, month);
-        else
-            rainyDaysAllMonths[month] = determineMonthlyWeather(weather, month);
-
     }
 
     determineAllWeather(weather, NUMBER_OF_MONTHS, NUMBER_OF_DAYS);
