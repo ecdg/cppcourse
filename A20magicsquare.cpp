@@ -21,7 +21,7 @@ int main()
     /*
     // Grid for testing
     // Use by making a comment block around
-    // the code to randomly generate a number
+    // the code for randomly generating a number
     // for each square
 
     int grid[ROWS][COLUMNS] = {{4, 9, 2},
