@@ -21,9 +21,11 @@ int main()
     cout << "\nThe number multiplied to 100 is: "
          << *ptr;
 
+    cout << endl;
+
     ptr = numbers;
 
-    cout << "\n\nThe contents of the array are: ";
+    cout << "\nThe numbers in the array are: ";
 
     for(int index = 0; index < SIZE; index++)
     {
