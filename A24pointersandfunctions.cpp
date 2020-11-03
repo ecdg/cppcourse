@@ -20,9 +20,9 @@ int main()
 
     cout<<"The function \"doMultipleThings\" returned "<<value<<endl;
 
-    // Memory Locations
-    cout<<"The memory location for the xPtr pointer is "<<xPtr<<endl;
-    cout<<"The memory location for the yPtr pointer is "<<yPtr<<endl;
+    // Display Contents of the Memory Locations
+    cout<<"The contents of the address xPtr points to is "<<*xPtr<<endl;
+    cout<<"The contents of the address yPtr points to is "<<*yPtr<<endl;
 
     return 0;
 }
