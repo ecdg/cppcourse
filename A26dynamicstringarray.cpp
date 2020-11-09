@@ -21,7 +21,7 @@ int main()
         index = 0,
         count = size;
 
-    string *ptr,
+    string *ptr = nullptr,
             item = "";
 
     // Initialize dynamic array
@@ -30,74 +30,79 @@ int main()
            "Ken",
            "Mark"};
 
-    // Re-prompt user when user gives a number outside
-    // of the choices
+    // Loops until user chooses to exit the program
     do
     {
         printMenu();
         cin >> input;
-    }while(input < 1 || input > 8);
+        switch(input)
+        {
+            case 1:
+                cout << "The name you want to "
+                     << "insert at the end of the list: ";
+                cin >> item;
+                if(count == size)
+                    ptr = expand(ptr, size);
+                if(insertAtEnd(ptr, item, count))
+                {
+                    cout << "\nThe new list:\n";
+                    printList(ptr, size);
+                    count++;
+                }
+                break;
+            case 2:
+                cout << "The name you want to "
+                     << "insert at the beginning of the list: ";
+                cin >> item;
+                if(count == size)
+                    ptr = expand(ptr, size);
+                if(insertAtZero(ptr, item, count))
+                {
+                    cout << "\nThe new list:\n";
+                    printList(ptr, size);
+                    count++;
+                }
+                break;
+            case 3:
+                cout << "The index position in the list you want to "
+                     << "insert a name: ";
+                cin >> index;
+                cout << "The name you want to "
+                     << "insert at index " << index << ": ";
+                cin >> item;
+                if(count == size)
+                    ptr = expand(ptr, size);
+                if(insertAt(ptr, item, index, count))
+                {
+                    cout << "\nThe new list:\n";
+                    printList(ptr, size);
+                    count++;
+                }
+                break;
+            /*
+            case 4:
+                removeFromEnd(ptr, count);
+                break;
+            case 5:
+                removeFrom(ptr, index, count);
+                break;
+            case 6:
+                sort(ptr, count);
+                break;
+            */
+            case 7:
+                cout << "\nThe list:\n";
+                printList(ptr, size);
+                break;
+            case 8:
+                cout << "\nGoodbye!\n";
+                break;
+            default:
+                cout << "\nThe valid choices are 1 through 8.\n"
+                     << "Please enter again.\n";
+        }
+    }while(input != 8);
 
-    switch(input)
-    {
-        case 1:
-            cout << "The name you want to "
-                 << "insert at the end of the list: ";
-            cin >> item;
-            expand(ptr, size);
-            if(insertAtEnd(ptr, item, count))
-            {
-                cout << "\nThe new list:\n";
-                printList(ptr, size);
-            }
-            break;
-        case 2:
-            cout << "The name you want to "
-                 << "insert at the beginning of the list: ";
-            cin >> item;
-            expand(ptr, size);
-            if(insertAtZero(ptr, item, count))
-            {
-                cout << "\nThe new list:\n";
-                printList(ptr, size);
-            }
-            break;
-        case 3:
-            cout << "The index position in the list you want to "
-                 << "insert a name: ";
-            cin >> index;
-            cout << "The name you want to "
-                 << "insert at index " << index << ": ";
-            cin >> item;
-            expand(ptr, size);
-            if(insertAt(ptr, item, index, count))
-            {
-                cout << "\nThe new list:\n";
-                printList(ptr, size);
-            }
-            break;
-        /*
-        case 4:
-            removeFromEnd(ptr, count);
-            break;
-        case 5:
-            removeFrom(ptr, index, count);
-            break;
-        case 6:
-            sort(ptr, count);
-            break;
-        */
-        case 7:
-            cout << "\nThe list:\n";
-            printList(ptr, size);
-            break;
-        case 8:
-            cout << "\nGoodbye!\n";
-            break;
-        default:
-            cout << "\nThe valid choices are 1 through 8.\n"
-                 << "Run the program again and select one of those.\n";
-    }
     return 0;
 }
 
