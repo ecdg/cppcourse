@@ -1,4 +1,4 @@
-// Activity 22: Dynamic memory allocation
+// Dynamic memory allocation
 // By Emily Dayanghirang and Alina Corpora
 
 #include <iostream>
