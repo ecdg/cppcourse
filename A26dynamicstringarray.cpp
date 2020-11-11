@@ -17,18 +17,18 @@ void sort(string *p, int count);
 int main()
 {
     int size = 5,
-        input = 0,
-        index = 0,
-        count = size;
+            input = 0,
+            index = 0,
+            count = size;
 
     string *ptr = nullptr,
             item = "";
 
     // Initialize dynamic array
     ptr = new string[size]{"Mary", "Kate",
-           "Ashley",
-           "Ken",
-           "Mark"};
+                           "Ashley",
+                           "Ken",
+                           "Mark"};
 
     // Loops until user chooses to exit the program
     do
@@ -79,17 +79,31 @@ int main()
                     count++;
                 }
                 break;
-            /*
             case 4:
-                removeFromEnd(ptr, count);
+                if (removeFromEnd(ptr, count))
+                {
+                    cout << "\nThe new list:\n";
+                    printList(ptr, size);
+                    count++;
+                }
                 break;
             case 5:
-                removeFrom(ptr, index, count);
+                cout << "The index position in the list you want to "
+                     << "delete a name: ";
+                cin >> index;
+                if(count == size)
+                    ptr = expand(ptr, size);
+                if(removeFrom(ptr, index, count))
+                {
+                    cout << "\nThe new list:\n";
+                    printList(ptr, size);
+                    count++;
+                }
                 break;
-            case 6:
+            /*case 6:
+                cout<<"Now sorting the list..."<<endl;
                 sort(ptr, count);
-                break;
-            */
+                break;*/
             case 7:
                 cout << "\nThe list:\n";
                 printList(ptr, size);
@@ -172,4 +186,25 @@ void printList(string *p, int size)
     for (int index = 0; index < size; index++)
         cout << *(p + index) << " ";
     cout << endl;
+}
+
+bool removeFrom(string *p, int index, int count)
+{
+    if(index < 0 || index > count)
+        return false;
+
+    *(p+index)=" ";
+
+    // Move contents
+    for(int i = count; i > index; i--)
+    {
+        *(p+i) = *(p+i-1);
+    }
+    return true;
+}
+
+bool removeFromEnd(string *p, int count)
+{
+    *(p+count-1)=" ";
+    return true;
 }
