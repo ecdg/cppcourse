@@ -100,10 +100,12 @@ int main()
                     count++;
                 }
                 break;
-            /*case 6:
+            case 6:
                 cout<<"Now sorting the list..."<<endl;
                 sort(ptr, count);
-                break;*/
+                cout << "\nThe new list:\n";
+                printList(ptr, size);
+                break;
             case 7:
                 cout << "\nThe list:\n";
                 printList(ptr, size);
@@ -190,21 +192,34 @@ void printList(string *p, int size)
 
 bool removeFrom(string *p, int index, int count)
 {
-    if(index < 0 || index > count)
+    if(index < 0 || index >= count)
         return false;
-
-    *(p+index)=" ";
-
-    // Move contents
-    for(int i = count; i > index; i--)
-    {
-        *(p+i) = *(p+i-1);
-    }
+    // Shift to left
+    for(int i = index; i < count - 1; i++)
+        *(p+i) = *(p+i+1);
+    *(p+count-1)="";
     return true;
 }
 
 bool removeFromEnd(string *p, int count)
 {
-    *(p+count-1)=" ";
-    return true;
+    return removeFrom(p, count - 1, count);
+}
+
+void sort(string *p, int count)
+{
+    string temp;
+    int i, j;
+    for(i = 0; i < count; i++)
+    {
+        for(j = i + 1; j < count; j++)
+        {
+            if((p+i)->compare(*(p+j)) > 0)
+            {
+                temp = *(p+i);
+                *(p+i) = *(p+j);
+                *(p+j) = temp;
+            }
+        }
+    }
 }
