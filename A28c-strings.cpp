@@ -24,7 +24,7 @@ int main()
          << (SIZE-1) << " characters (alphabets and digits) and with nothing\n"
          << "separating them: ";
 
-    cin >> setw(15) >> line;
+    cin >> setw(16) >> line;
 
     cout << "\nThe sum of all the single-digit numbers in the string:\n";
 
