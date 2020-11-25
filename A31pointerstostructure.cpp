@@ -64,7 +64,7 @@ int computeStats(NumList *num)
     {
         float min = *num->list;
         float max = *num->list;
-        float total = 0, average;
+        float total = 0;
 
         for(int i = 0; i < num->len; i++)
         {
@@ -89,10 +89,10 @@ int computeStats(NumList *num)
 
         cout << "\nThe total of the number is " << total << ".\n";
 
-        average = total / num->len;
+        num->avg = total / num->len;
 
         cout << setprecision(2) << fixed
-             << "\nThe average of the list is " << average << ".\n";
+             << "\nThe average of the list is " << num->avg << ".\n";
 
         return 0;
     }
