@@ -44,7 +44,6 @@ int main()
     num->list = nullptr;
 
     delete num;
-    num = nullptr;
 
     return 0;
 }
