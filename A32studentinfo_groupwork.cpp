@@ -159,11 +159,11 @@ void display(const Student* students, int numOfStudents, int numOfTests)
     cout << setprecision(2) << fixed;
     for (int i = 0; i < numOfStudents; i++)
     {
-        cout << setw(15) << left << students[i].name << setw(15) << students[i].idNum;
+        cout << setw(15) << left << (students+i)->name << setw(15) << (students+i)->idNum;
         for (int j = 0; j < numOfTests; j++)
         {
-            cout << setw(15) << students[i].tests[j];
+            cout << setw(15) << *((students+i)->tests+j);
         }
-        cout << setw(15) << students[i].average << setw(15) << students[i].grade << endl;
+        cout << setw(15) << (students+i)->average << setw(15) << (students+i)->grade << endl;
     }
 }
