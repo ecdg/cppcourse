@@ -1,32 +1,69 @@
 // Heads or Tails
-// By Emily Dayanghirang
+// By Alina Corpora and Emily Dayanghirang
+#include "Coin.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "Coin.h"
 using namespace std;
-
-const int MAX_VALUE=2,
-          MIN_VALUE=1,
-          RANGE=MAX_VALUE-MIN_VALUE+1;
-
+ 
+void displayWinner(int,int);
+ 
 int main()
 {
-    Coin round;
-    int number, side;
-
-    srand(time(0));
-
-    number = rand() % RANGE + MIN_VALUE;
-
-    round.toss(number);
-
-    side = round.getSideUp();
-
-    if (side == 1)
-        cout << side << ": Heads";
-    else
-        cout << side << ": Tails";
-
-    return 0;
+   Coin player1, player2;
+   int number, player1Count = 0, player2Count = 0;
+ 
+   srand(time(0));
+ 
+   cout << "Player 1's turn (3 tosses): \n";
+ 
+   for(int i = 0; i < 3; i++)
+   {
+     Coin player1;
+    
+     if(player1.getSideUp() == 1)
+     {
+       cout << "User rolled Heads!" << endl;
+       player1Count++;
+     }
+     else
+       cout << "User rolled Tails!" << endl;
+   }
+ 
+   cout << "\n\nPlayer 2's turn (3 tosses): \n";
+ 
+   for(int i = 0; i < 3; i++)
+   {
+     Coin player2;
+ 
+     if(player2.getSideUp() == 1)
+     {
+       cout << "User rolled Heads!" << endl;
+       player2Count++;
+     }
+     else
+       cout << "User rolled Tails!" << endl;
+   }
+ 
+   displayWinner(player1Count,player2Count);
+ 
+   return 0;
+}
+ 
+void displayWinner(int player1, int player2)
+{
+ if(player1 > player2)
+ {
+   cout << "\nPlayer 1 is the winner with " << player1
+        << " number of heads!";
+ }
+ else if(player2 > player1)
+ {
+       cout << "\nPlayer 2 is the winner with " << player2
+        << " number of heads!";
+ }
+ else
+ {
+   cout << "\nIt's a tie!";
+ }
 }
