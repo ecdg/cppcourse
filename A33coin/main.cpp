@@ -1,3 +1,5 @@
+// Heads or Tails
+// By Emily Dayanghirang
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
