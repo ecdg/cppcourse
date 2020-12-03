@@ -1,16 +1,19 @@
 #include "Coin.h"
-
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+using namespace std;
 Coin::Coin()
 {
-    sideUp = 0;
+  toss();
 }
-
-void Coin::toss(int num)
+void Coin::toss()
 {
-    sideUp = num;
+   int num;
+   num = rand() % 2;
+   sideUp = num;
 }
-
 int Coin::getSideUp() const
 {
-    return sideUp;
+   return sideUp;
 }
