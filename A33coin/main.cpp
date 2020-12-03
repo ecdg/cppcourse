@@ -10,7 +10,6 @@ void displayWinner(int,int);
  
 int main()
 {
-   Coin player1, player2;
    int number, player1Count = 0, player2Count = 0;
  
    srand(time(0));
