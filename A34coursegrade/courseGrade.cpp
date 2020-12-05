@@ -1,5 +1,5 @@
 // Course grade - using class and object
-// // By Emily Dayanghirang and Alina Corpora
+// By Emily Dayanghirang and Alina Corpora
 
 #include "Student.h"
 #include <iostream>
