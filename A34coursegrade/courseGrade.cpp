@@ -55,8 +55,8 @@ int main()
  
 void getInput(Student* newSt)
 {
-   char* name;
-   char* id;
+   char* name = new char[81];
+   char* id = new char[11];
    int numT;
    double test;
  
@@ -88,4 +88,7 @@ void getInput(Student* newSt)
        }
    }
    cin.ignore();
+ 
+   delete [] name;
+   delete [] id;
 }
